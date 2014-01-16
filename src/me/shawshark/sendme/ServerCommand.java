@@ -21,16 +21,15 @@ public class ServerCommand implements CommandExecutor {
 			sender.sendMessage(ChatColor.RED + "Error: This command can only be run from in-game!");
 		} else {
 			final Player p = (Player) sender;
-				 if(args.length < 1) {
-					if(!p.hasPermission("sendme.use")) {
-						p.sendMessage(ChatColor.RED + "Error: You don't have permissions for this command.");
-					} else {
-						p.sendMessage(ChatColor.GOLD + "Correct Usage: " + ChatColor.RED + "/server [servername]");
-					}
+			if(!p.hasPermission("sendme.use")) {
+				p.sendMessage(ChatColor.RED + "Error: You don't have permissions for this command.");
+			} else {
+				if(args.length < 1) {
+					 p.sendMessage(ChatColor.GOLD + "Correct Usage: " + ChatColor.RED + "/server [servername]");
 				 } else {
 					 if(m.timer < 1) {
-						 m.s.sendplayer(p.getName(), args[0]);
-					 } else {
+							m.s.sendplayer(p.getName(), args[0]);
+						} else {
 						 p.sendMessage(ChatColor.GOLD + "Teleportation will commence in " + m.timer + " seconds.");
 						 new BukkitRunnable() {
 							@Override
@@ -40,9 +39,10 @@ public class ServerCommand implements CommandExecutor {
 								}
 							}
 						}.runTaskLater(m, m.timer * 20);
-					 }	
-			} 
+					 } 
+				 }
+			}
 		 }
 		return false;
-	}
+	}	
 }
