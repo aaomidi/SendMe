@@ -1,7 +1,9 @@
 name: SendMe
 depend: [LilyPad-Connect]
-version: 1.0
+version: 1.2
 main: me.shawshark.sendme.main
 commands:
   server:
     description: Sends the sender to the server they requested.
+  lilysend:
+    description: Send another user to a lilypad server.
