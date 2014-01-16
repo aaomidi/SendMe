@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class main extends JavaPlugin {
 	
 	public Send s = new Send(this);
+	public LilySendCommand lsc = new LilySendCommand(this);
 	Connect connect;
 	
 	public int timer = 0;
